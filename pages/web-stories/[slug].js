@@ -158,8 +158,7 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-      <style amp-custom="" dangerouslySetInnerHTML={{
-      
+      {/* <style amp-custom="" dangerouslySetInnerHTML={{
       
         __html: `
         amp-story-page {
@@ -235,7 +234,9 @@ const Stories = ({ story, errorCode }) => {
     }
         `,
       }}
-    />
+    /> */}
+
+
     </Head>
   );
 
