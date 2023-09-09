@@ -158,9 +158,9 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-      <style
-      amp-custom=""
-      dangerouslySetInnerHTML={{
+      <style amp-custom="" dangerouslySetInnerHTML={{
+      
+      
         __html: `
         amp-story-page {
           background-image: url("/back.webp");
@@ -235,7 +235,7 @@ const Stories = ({ story, errorCode }) => {
     }
         `,
       }}
-    ></style>
+    />
     </Head>
   );
 
