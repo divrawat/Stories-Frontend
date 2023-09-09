@@ -9,7 +9,6 @@ export const config = { amp: true };
 const Stories = ({ story, errorCode }) => {
 
 
-
     if (errorCode) {
         return (
             <Layout>
@@ -154,6 +153,109 @@ const Stories = ({ story, errorCode }) => {
 
             
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+
+            <style amp-custom>
+  {`
+    amp-story-page {
+      background-image: url("/back.webp");
+    }
+
+
+    
+amp-story-grid-layer{
+  background-image: linear-gradient(.5turn,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 99%);
+}
+
+
+
+amp-story-grid-layer{
+  margin: auto;
+}
+
+
+amp-story-page h1{
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.5;
+  color: white;
+  text-transform: capitalize;
+  font-family:Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  word-wrap: break-word;
+
+}
+
+amp-story-page  h3 {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.5;
+  color: white;
+  text-transform: capitalize;
+  font-family:Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 45px;
+  word-wrap: break-word;
+
+}
+
+amp-story-page h2 {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1.5;
+  color: white;
+  text-transform: capitalize;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  word-wrap: break-word;
+}
+
+
+
+amp-story-page p {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.6;
+  color: white;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+amp-story-grid-layer.bottom {
+  align-content: end;
+  padding-bottom: 60px;
+}
+
+.myclass amp-story-grid-layer.bottom{
+  padding-bottom: 40px;
+}
+
+
+amp-story-grid-layer.noedge {
+  padding: 0px;
+}
+
+amp-story-grid-layer.center-text {
+  align-content: center;
+}
+
+
+amp-img{
+height: 40vh;
+}
+
+
+  `}
+</style>
+
+
+
         </Head>
     );
 
@@ -191,7 +293,7 @@ const Stories = ({ story, errorCode }) => {
                 {story.slides.map((slide, i) => (
                     <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
 
-                        {slide.image && (<amp-story-grid-layer>
+                        {slide.image && (<amp-story-grid-layer template="vertical">
                             <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
                         </amp-story-grid-layer>)}
 
@@ -206,7 +308,7 @@ const Stories = ({ story, errorCode }) => {
 
                 {story.link && story.lastheading && story.lastimage &&(
                     <amp-story-page id={`page${story.slides.length + 1}`} key={story.length + 1}>
-                        <amp-story-grid-layer>
+                        <amp-story-grid-layer template="vertical">
                             <amp-img src={`${story.lastimage}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
                         </amp-story-grid-layer>
 
