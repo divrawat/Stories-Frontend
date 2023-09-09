@@ -7,8 +7,7 @@ import { format} from 'date-fns';
 
 const Stories = ({ story, errorCode }) => {
 
-    const date0 = new Date(story.date);
-    const formattedDate = format(date0, 'dd MMM, yyyy');
+
 
     if (errorCode) {
         return (
@@ -157,7 +156,8 @@ const Stories = ({ story, errorCode }) => {
         </Head>
     );
 
-
+    const date0 = new Date(story.date);
+    const formattedDate = format(date0, 'dd MMM, yyyy');
 
     return (
 
