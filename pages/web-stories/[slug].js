@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { API, DOMAIN, APP_NAME, MY_API } from "../../config";
 import Script from 'next/script';
 import { format} from 'date-fns';
+export const config = { amp: true };
 
 const Stories = ({ story, errorCode }) => {
 
