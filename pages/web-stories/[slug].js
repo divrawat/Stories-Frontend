@@ -122,7 +122,7 @@ const Stories = ({ story, errorCode }) => {
     const head = () => (
         <Head>
             <title >{`${story.title} - ${APP_NAME}`}</title>
-            <meta charset="utf-8" />
+            <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width,minimum-scale=1" />
             <meta name="description" content={`${story.description}`} />
             <meta name="robots" content="follow, index, noarchive, max-snippet:-1, max-video-preview:-1, max-image-preview:large"></meta>
@@ -274,7 +274,7 @@ height: 40vh;
 
 
 
-            <amp-story standalone title={`${story.title}`} publisher={`${APP_NAME}`} publisher-logo-src="http://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-1.png" poster-portrait-src={`${story.coverphoto}`} >
+            <amp-story standalone="" title={`${story.title}`} publisher={`${APP_NAME}`} publisher-logo-src="http://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-1.png" poster-portrait-src={`${story.coverphoto}`} >
 
 
                 <amp-story-page id="cover" className="myclass" auto-advance-after="4s">
