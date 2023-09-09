@@ -149,9 +149,6 @@ const Stories = ({ story, errorCode }) => {
       <link rel="apple-touch-icon" href="https://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-180x180.png" />
       <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} - Feed`} href="https://www.naukarisamachar.live/feed/" />
       <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} » Stories Feed`} href="https://www.naukarisamachar.live/web-stories/feed/" />
-      <style amp-runtime="" i-amphtml-version="012308242321000"></style>
-
-
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
 
@@ -259,7 +256,7 @@ const Stories = ({ story, errorCode }) => {
 
 
         <amp-story-page id="cover" className="myclass" auto-advance-after="4s">
-          <amp-story-grid-layer template="vertical">
+          <amp-story-grid-layer layout="fill">
             <amp-img src={`${story.coverphoto}`} layout="responsive" width="720" height="1280" />
           </amp-story-grid-layer>
 
