@@ -256,7 +256,7 @@ const Stories = ({ story, errorCode }) => {
 
 
         <amp-story-page id="cover" className="myclass" auto-advance-after="4s">
-          <amp-story-grid-layer layout="fill">
+          <amp-story-grid-layer template="vertical">
             <amp-img src={`${story.coverphoto}`} layout="responsive" width="720" height="1280" />
           </amp-story-grid-layer>
 
