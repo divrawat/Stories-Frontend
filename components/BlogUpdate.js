@@ -144,34 +144,7 @@ const BlogUpdate = ({ router }) => {
             <div className={styles.back}>
                 <form onSubmit={editStory} >
                     <div className={styles.gridcontainer}>
-                        <div className={styles.griditem1}>
-
-                            <input placeholder='Web Story Title' className={styles.title} value={title} onChange={handletitle("title")} autoFocus={true} />
-
-                            <div className={styles.slideContainer}>
-                                {slides.map((slide, index) => (
-                                    <div key={index} className={styles.slide}>
-                                        <div className={styles.divspan}>  <span className={styles.storynum}>{index + 1}</span></div>
-
-                                        <div className={styles.INP}>Image</div>
-                                        <input type="text" placeholder="Image URL" value={slide.image} onChange={handleSlideChange(index, 'image')} />
-                                        <div className={styles.INP}>Heading</div>
-                                        <input type="text" placeholder="Heading" value={slide.heading} onChange={handleSlideChange(index, 'heading')} />
-                                        <textarea placeholder="Paragraph" value={slide.paragraph} onChange={handleSlideChange(index, 'paragraph')} />
-
-
-                                        <div className={styles.btncontainer}>
-                                            <button type="button" onClick={handleRemoveSlide(index)} className={styles.removeslide}> 🗑 </button>
-                                        </div>
-
-                                    </div>
-                                ))}
-                                <button className={styles.addslide} type="button" onClick={handleAddSlide}> + </button>
-
-                            </div>
-
-
-                        </div>
+                       
 
 
                         {/* ---------------------------------------------------------------------------------------------------------------------- */}
@@ -200,6 +173,50 @@ const BlogUpdate = ({ router }) => {
                             <input className={styles.slug} value={lastheading} placeholder='Lastheading' onChange={handletitle("lastheading")} />
 
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div className={styles.griditem1}>
+
+<input placeholder='Web Story Title' className={styles.title} value={title} onChange={handletitle("title")} autoFocus={true} />
+
+<div className={styles.slideContainer}>
+    {slides.map((slide, index) => (
+        <div key={index} className={styles.slide}>
+            <div className={styles.divspan}>  <span className={styles.storynum}>{index + 1}</span></div>
+
+            <div className={styles.INP}>Image</div>
+            <input type="text" placeholder="Image URL" value={slide.image} onChange={handleSlideChange(index, 'image')} />
+            <div className={styles.INP}>Heading</div>
+            <input type="text" placeholder="Heading" value={slide.heading} onChange={handleSlideChange(index, 'heading')} />
+            <textarea placeholder="Paragraph" value={slide.paragraph} onChange={handleSlideChange(index, 'paragraph')} />
+
+
+            <div className={styles.btncontainer}>
+                <button type="button" onClick={handleRemoveSlide(index)} className={styles.removeslide}> 🗑 </button>
+            </div>
+
+        </div>
+    ))}
+    <button className={styles.addslide} type="button" onClick={handleAddSlide}> + </button>
+
+</div>
+
+
+</div>
                     </div>
                 </form>
             </div>

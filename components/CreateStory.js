@@ -21,8 +21,8 @@ const CreateStory = () => {
         description: '',
         slug: '',
         link: '',
-        lastheading:'',
-        lastimage:'',
+        lastheading: '',
+        lastimage: '',
         publishstory: 'Publish Story',
         slides: Array(7).fill({ image: '', heading: '', paragraph: '' }),
     });
@@ -67,15 +67,15 @@ const CreateStory = () => {
         const { formData } = values;
         formData.set(name, value);
         setValues({ ...values, [name]: value, formData, error: '' });
-      };
-      
+    };
+
 
 
     const handletitle = name => e => {
         const value = e.target.value;
         formData.set(name, value);
         setValues({ ...values, [name]: value, formData, error: '' });
-          
+
     };
 
 
@@ -83,8 +83,8 @@ const CreateStory = () => {
         const updatedSlides = [...slides];
         updatedSlides[index] = { ...updatedSlides[index], [property]: e.target.value };
         setValues({ ...values, slides: updatedSlides });
-        formData.set('slides', JSON.stringify(updatedSlides) );
-        
+        formData.set('slides', JSON.stringify(updatedSlides));
+
     };
 
 
@@ -99,11 +99,11 @@ const CreateStory = () => {
             else {
                 setValues({ ...values, title: '', link: '', description: '', link: '', slides: [], coverphoto: '', slug: '', error: '', success: `A story titled "${data.title}" is created` });
 
-                 let storyslug = slugify(slug).toLowerCase();
-                 function redirect() {
-                     Router.replace(`/web-stories/${storyslug}`);
-                 }
-                 setTimeout(redirect, 200)
+                let storyslug = slugify(slug).toLowerCase();
+                function redirect() {
+                    Router.replace(`/web-stories/${storyslug}`);
+                }
+                setTimeout(redirect, 200)
             }
         });
     };
@@ -113,6 +113,50 @@ const CreateStory = () => {
         <div className={styles.back}>
             <form onSubmit={publishwebstory} >
                 <div className={styles.gridcontainer}>
+
+
+
+
+                    <div className={styles.griditem2}>
+
+                        {showError()}
+                        {showSuccess()}
+
+                        <button type='submit' className={styles.publishbtn}>{publishstory}</button>
+
+                      <div>  <input className={styles.coverphoto} placeholder='Cover Photo Link' value={coverphoto} onChange={handletitle("coverphoto")} /></div>
+
+                        <DatePicker id='date' autoComplete="off" onChange={handleDateChange} className={styles.datepick} placeholderText='Date'
+                            selected={values.date ? new Date(values.date) : null}
+                            minDate={new Date()} showYearDropdown dateFormat="dd MMM, yyyy" timeZone="Asia/Kolkata" />
+
+
+                        <div className={styles.textarea}>
+                            <textarea placeholder='Description' value={description} onChange={handletitle("description")} />
+                        </div>
+
+                        <input className={styles.slug} value={slug} placeholder='slug' onChange={handletitle("slug")} />
+
+                        <br/><br/> <br/><br/> <br/><br/><br/><br/> <br/><br/> <br/><br/>
+
+                        <input className={styles.slug} value={link} placeholder='Swipe Up Link' onChange={handletitle("link")} />
+                        <input className={styles.slug} value={lastimage} placeholder='Image' onChange={handletitle("lastimage")} />
+                        <input className={styles.slug} value={lastheading} placeholder='Heading' onChange={handletitle("lastheading")} />
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
                     <div className={styles.griditem1}>
 
                         <input placeholder='Web Story Title' className={styles.title} value={title} onChange={handletitle("title")} autoFocus={true} />
@@ -144,32 +188,7 @@ const CreateStory = () => {
 
                     {/* ---------------------------------------------------------------------------------------------------------------------- */}
 
-                    <div className={styles.griditem2}>
 
-                        {showError()}
-                        {showSuccess()}
-
-                        <button type='submit' className={styles.publishbtn}>{publishstory}</button>
-
-                        <input className={styles.coverphoto} placeholder='Cover Photo Link' value={coverphoto} onChange={handletitle("coverphoto")} />
-
-                        <DatePicker id='date' autoComplete="off" onChange={handleDateChange} className={styles.datepick} placeholderText='Date'
-                            selected={values.date ? new Date(values.date) : null}
-                            minDate={new Date()} showYearDropdown dateFormat="dd MMM, yyyy" timeZone="Asia/Kolkata"/>
-
-
-                        <div className={styles.textarea}>
-                            <textarea placeholder='Description' value={description} onChange={handletitle("description")} />
-                        </div>
-
-                        <input className={styles.slug} value={slug} placeholder='slug' onChange={handletitle("slug")} />
-
-                        <input className={styles.slug} value={link} placeholder='Swipe Up Link' onChange={handletitle("link")} />
-                        <input className={styles.slug} value={lastimage} placeholder='Image' onChange={handletitle("lastimage")} />
-                        <input className={styles.slug} value={lastheading} placeholder='Heading' onChange={handletitle("lastheading")} />
-                        
-
-                    </div>
                 </div>
             </form>
         </div>
