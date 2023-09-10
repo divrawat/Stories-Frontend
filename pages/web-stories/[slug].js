@@ -66,8 +66,8 @@ const Stories = ({ story, errorCode }) => {
                 "@id": `${DOMAIN}/${story.slug}/#webpage`,
                 "url": `${DOMAIN}/${story.slug}`,
                 "name": `${story.title}`,
-                // "datePublished": `${story.date}`,
-                // "dateModified": `${story.date}`,
+                 "datePublished": `${story.date}`,
+                 "dateModified": `${story.date}`,
                 "isPartOf": {
                   "@id":`${DOMAIN}/#website`
                 },
@@ -249,14 +249,6 @@ const Stories = ({ story, errorCode }) => {
       })
     }} />
 </amp-story-auto-ads>
-
-
-
-
-
-
-
-
 
             </amp-story>
 

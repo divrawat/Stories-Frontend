@@ -4,9 +4,9 @@
     const publicRuntimeConfig = {
         APP_NAME: 'MyStories',
         APP_DESCRIPTION:'Stories is a news website that delivers content on the basis of web stories.', 
-        API_DEVELOPMENT: 'https://stories-backend.onrender.com/api',
-        MY_API:"http://localhost:8000",
-        API_PRODUCTION:"https://stories-backend.onrender.com/api",
+        API_DEVELOPMENT: 'https://stories-backend-six.vercel.app/api',
+        MY_API:"https://stories-backend-six.vercel.app/",
+        API_PRODUCTION:"https://stories-backend-six.vercel.app/api",
         PRODUCTION: true,
         DOMAIN_DEVELOPMENT:"http://localhost:3000",
         DOMAIN_PRODUCTION:"https://stories-frontend-zeta.vercel.app",
