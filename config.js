@@ -9,7 +9,7 @@
         API_PRODUCTION:"https://stories-backend.onrender.com/api",
         PRODUCTION: true,
         DOMAIN_DEVELOPMENT:"http://localhost:3000",
-        DOMAIN_PRODUCTION:"https://stories-frontend-zeta.vercel.app/",
+        DOMAIN_PRODUCTION:"https://stories-frontend-zeta.vercel.app",
         }
         
 

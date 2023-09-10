@@ -4,7 +4,6 @@ import { getCookie } from '../action/auth';
 import { createwebstory } from '../action/story.js';
 import styles from "../styles/editor.module.css"
 import slugify from 'slugify';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
@@ -91,13 +90,10 @@ const CreateStory = () => {
     const publishwebstory = e => {
         e.preventDefault();
         setValues({ ...values, publishstory: 'Publishing...' });
-
         createwebstory(formData, token).then(data => {
             if (data.error) { setValues({ ...values, error: data.error }); }
-
             else {
                 setValues({ ...values, title: '', link: '', description: '', link: '', slides: [], coverphoto: '', slug: '', error: '', success: `A story titled "${data.title}" is created` });
-
                 let storyslug = slugify(slug).toLowerCase();
                 function redirect() {
                     Router.replace(`/web-stories/${storyslug}`);
