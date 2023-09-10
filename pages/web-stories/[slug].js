@@ -209,11 +209,21 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-        <amp-story-page id="000" distance="0" aria-hidden="false" className="i-amphtml-layout-container i-amphtml-element i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" role="region" i-amphtml-layout="container" >
+        {/* <amp-story-page id="000" distance="0" aria-hidden="false" className="i-amphtml-layout-container i-amphtml-element i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" role="region" i-amphtml-layout="container" >
 
         <amp-story-grid-layer template="vertical" className="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
           <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" className="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" layout="fill" amp-story="" i-amphtml-layout="fill" data-amp-slot-index="0" data-a4a-upgrade-type="amp-ad-network-adsense-impl"></amp-ad>
         </amp-story-grid-layer>
+
+
+        </amp-story-page> */}
+
+
+        <amp-story-page aria-hidden="false" id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page4" i-amphtml-advance-to="page5"   auto-advance-to="page5" active="" >
+
+          <amp-story-grid-layer template="vertical" className="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
+            <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" className="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" layout="fill" amp-story="" i-amphtml-layout="fill" data-amp-slot-index="0" data-a4a-upgrade-type="amp-ad-network-adsense-impl"></amp-ad>
+          </amp-story-grid-layer>
 
 
         </amp-story-page>
