@@ -5,9 +5,6 @@ import { withRouter } from 'next/router';
 import { getCookie, isAuth } from '../action/auth';
 import { singleStory, updateStory } from '../action/story';
 import slugify from 'slugify';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { parseISO } from 'date-fns';
 import styles from "../styles/editor.module.css"
 
 
@@ -88,10 +85,10 @@ const BlogUpdate = ({ router }) => {
                     }
 
                 } else {
-                    const isoDateString = data.date;
-                    const dateObject = parseISO(isoDateString);
+                    // const isoDateString = data.date;
+                    // const dateObject = parseISO(isoDateString);
 
-                    setValues({ ...values, title: data.title, description: data.description, date: dateObject, slug: data.slug, coverphoto: data.coverphoto, link: data.link, lastheading:data.lastheading, lastimage:data.lastimage, slides: data.slides });
+                    setValues({ ...values, title: data.title, description: data.description, slug: data.slug, coverphoto: data.coverphoto, link: data.link, lastheading:data.lastheading, lastimage:data.lastimage, slides: data.slides });
                 }
             });
         }
@@ -113,13 +110,13 @@ const BlogUpdate = ({ router }) => {
         formData.set('slides', JSON.stringify(updatedSlides));
     };
 
-    const handleDateChange = (date) => {
-        const name = 'date';
-        const value = date;
-        const { formData } = values;
-        formData.set(name, value);
-        setValues({ ...values, [name]: value, formData, error: '' });
-    };
+    // const handleDateChange = (date) => {
+    //     const name = 'date';
+    //     const value = date;
+    //     const { formData } = values;
+    //     formData.set(name, value);
+    //     setValues({ ...values, [name]: value, formData, error: '' });
+    // };
 
 
     const handletitle = name => e => {
@@ -156,10 +153,10 @@ const BlogUpdate = ({ router }) => {
 
                             <button type='submit' className={styles.publishbtn}>{publishstory}</button>
 
-                            <input className={styles.coverphoto} placeholder='Cover Photo Link' value={coverphoto} onChange={handletitle("coverphoto")} />
+                          <div>  <input className={styles.coverphoto} placeholder='Cover Photo Link' value={coverphoto} onChange={handletitle("coverphoto")} /></div>
 
-                            <DatePicker id='date' autoComplete="off" onChange={handleDateChange} className={styles.datepick} placeholderText='Date'
-                                selected={values.date} minDate={new Date()} showYearDropdown dateFormat="dd MMM, yyyy" />
+                            {/* <DatePicker id='date' autoComplete="off" onChange={handleDateChange} className={styles.datepick} placeholderText='Date'
+                                selected={values.date} minDate={new Date()} showYearDropdown dateFormat="dd MMM, yyyy" /> */}
 
 
                             <div className={styles.textarea}>

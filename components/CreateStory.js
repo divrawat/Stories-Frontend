@@ -88,7 +88,6 @@ const CreateStory = () => {
     };
 
 
-
     const publishwebstory = e => {
         e.preventDefault();
         setValues({ ...values, publishstory: 'Publishing...' });
@@ -126,9 +125,11 @@ const CreateStory = () => {
 
                       <div>  <input className={styles.coverphoto} placeholder='Cover Photo Link' value={coverphoto} onChange={handletitle("coverphoto")} /></div>
 
-                        <DatePicker id='date' autoComplete="off" onChange={handleDateChange} className={styles.datepick} placeholderText='Date'
+
+                        {/* <DatePicker id='date' autoComplete="off" onChange={handleDateChange} className={styles.datepick} placeholderText='Date'
                             selected={values.date ? new Date(values.date) : null}
-                            minDate={new Date()} showYearDropdown dateFormat="dd MMM, yyyy" timeZone="Asia/Kolkata" />
+                            minDate={new Date()} showYearDropdown dateFormat="dd MMM, yyyy" timeZone="Asia/Kolkata" /> */}
+
 
 
                         <div className={styles.textarea}>
