@@ -211,8 +211,9 @@ const Stories = ({ story, errorCode }) => {
 
         <amp-story-page id="000" >
 
-        <amp-story-grid-layer template="vertical" >
-          <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" layout="vertical" data-ad-slot="6021303939" data-amp-slot-index="0" data-a4a-upgrade-type="amp-ad-network-adsense-impl"></amp-ad>
+        <amp-story-grid-layer template="vertical" style={{height:"70vh"}}>
+          <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="responsive" amp-story="" width="720" height="1280" data-amp-slot-index="0" data-a4a-upgrade-type="amp-ad-network-adsense-impl">
+          </amp-ad>
         </amp-story-grid-layer>
 
 
