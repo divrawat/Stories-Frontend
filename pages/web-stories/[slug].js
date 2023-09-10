@@ -242,7 +242,6 @@ const Stories = ({ story, errorCode }) => {
       __html: JSON.stringify({
         "ad-attributes": {
           "type": "adsense",
-          "ad-count": 2,
           "data-ad-client": "ca-pub-1721485376950080",
           "data-ad-slot": "6021303939",           
         }
