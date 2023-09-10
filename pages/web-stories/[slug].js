@@ -226,7 +226,7 @@ const Stories = ({ story, errorCode }) => {
 
         {story.link && story.lastheading && story.lastimage && (
           <amp-story-page id={`page${story.slides.length + 1}`} key={story.length + 1}>
-            <amp-story-grid-layer>
+            <amp-story-grid-layer template="vertical">
               <amp-img src={`${story.lastimage}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
             </amp-story-grid-layer>
 
