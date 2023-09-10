@@ -211,9 +211,13 @@ const Stories = ({ story, errorCode }) => {
 
         <amp-story-page ad id="000" >
 
-        <amp-story-grid-layer template="vertical" style={{height:"70vh"}}>
-          <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="responsive" amp-story="" width="720" height="1280" data-amp-slot-index="0" data-a4a-upgrade-type="amp-ad-network-adsense-impl">
+        <amp-story-grid-layer template="fill">
+          <amp-ad type="adsense" template="fill" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="responsive" amp-story="" width="720" height="1280" data-amp-slot-index="0" data-a4a-upgrade-type="amp-ad-network-adsense-impl">
           </amp-ad>
+
+          <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
+          <div class="i-amphtml-story-spinner" aria-hidden="true" aria-label="Loading video"><div class="i-amphtml-story-spinner-container"><div class="i-amphtml-story-spinner-layer"><div class="i-amphtml-story-spinner-circle-clipper left"></div><div class="i-amphtml-story-spinner-circle-clipper right"></div></div></div></div>
+
         </amp-story-grid-layer>
 
 
