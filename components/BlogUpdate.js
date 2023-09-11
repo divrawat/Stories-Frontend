@@ -165,6 +165,8 @@ const BlogUpdate = ({ router }) => {
 
                             <input className={styles.slug} value={slug} placeholder='slug' onChange={handletitle("slug")} />
 
+                            <br/><br/> <br/><br/> <br/><br/><br/><br/> <br/><br/> <br/><br/>
+
                             <input className={styles.slug} value={link} placeholder='Swipe Up Link' onChange={handletitle("link")} />
                             <input className={styles.slug} value={lastimage} placeholder='Lastimage' onChange={handletitle("lastimage")} />
                             <input className={styles.slug} value={lastheading} placeholder='Lastheading' onChange={handletitle("lastheading")} />
