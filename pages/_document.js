@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
           {initialProps.styles}
           <style amp-custom="" dangerouslySetInnerHTML={{
             __html: ` amp-story-page {
-              background-image: url("/back.webp");
+              background-image: url("/backimg.webp");
             }
         amp-story-grid-layer{
           margin: auto;
