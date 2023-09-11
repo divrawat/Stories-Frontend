@@ -239,7 +239,7 @@ const Stories = ({ story, errorCode }) => {
 
 
             {i === 2 ? (
-              <amp-story-page aria-hidden="false" distance="0" id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" auto-advance-to="page3" i-amphtml-visited="" active="">
+              <amp-story-page id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" auto-advance-to="page3" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
@@ -255,7 +255,7 @@ const Stories = ({ story, errorCode }) => {
 
 
             {i === 4 ? (
-              <amp-story-page aria-hidden="false" distance="0" id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page4" i-amphtml-advance-to="page5" auto-advance-to="page5" i-amphtml-visited="" active="">
+              <amp-story-page id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page4" i-amphtml-advance-to="page5" auto-advance-to="page5" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
