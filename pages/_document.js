@@ -13,9 +13,6 @@ export default class MyDocument extends Document {
               background-image: url("/back.webp");
             }
         amp-story-grid-layer{
-          background-image: linear-gradient(.5turn,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 99%);
-        }
-        amp-story-grid-layer{
           margin: auto;
         }
         amp-story-page h1{
