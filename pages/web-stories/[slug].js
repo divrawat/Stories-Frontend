@@ -223,39 +223,48 @@ const Stories = ({ story, errorCode }) => {
 
         {story.slides.map((slide, i) => (
 
-          <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
-            <amp-story-grid-layer template="vertical">
-              <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
-            </amp-story-grid-layer>
+          <>
+            <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
+              <amp-story-grid-layer template="vertical">
+                <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
+              </amp-story-grid-layer>
 
-            <amp-story-grid-layer template="vertical" className="bottom">
-              {slide.heading && (
-                <h2 animate-in="fade-in" animate-in-delay="0.2s" animate-in-duration="0.5s">{slide.heading}</h2>
-              )}
-              <p animate-in="fade-in" animate-in-delay="0.3s" animate-in-duration="0.5s">{slide.paragraph}</p>
-            </amp-story-grid-layer>
-          </amp-story-page>
+              <amp-story-grid-layer template="vertical" className="bottom">
+                {slide.heading && (
+                  <h2 animate-in="fade-in" animate-in-delay="0.2s" animate-in-duration="0.5s">{slide.heading}</h2>
+                )}
+                <p animate-in="fade-in" animate-in-delay="0.3s" animate-in-duration="0.5s">{slide.paragraph}</p>
+              </amp-story-grid-layer>
+            </amp-story-page>
+
+
+
+            <amp-story-page id={`page${story.slides.length + 1}`} i-amphtml-layout="container" >
+
+              <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
+
+                <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" class="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" layout="fill" amp-story="" i-amphtml-layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
+              </amp-story-grid-layer>
+
+              <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
+
+
+              <div class="i-amphtml-story-spinner" aria-hidden="true" aria-label="Loading video"><div class="i-amphtml-story-spinner-container"><div class="i-amphtml-story-spinner-layer"><div class="i-amphtml-story-spinner-circle-clipper left"></div><div class="i-amphtml-story-spinner-circle-clipper right"></div></div></div></div>
+
+            </amp-story-page>
+
+
+
+          </>
 
         ))}
 
 
-        <amp-story-page id="i-amphtml-ad-page-1" i-amphtml-layout="container" >
 
-          <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
-
-            <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" class="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" layout="fill" amp-story="" i-amphtml-layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
-            </amp-story-grid-layer>
-
-            <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
-
-
-            <div class="i-amphtml-story-spinner" aria-hidden="true" aria-label="Loading video"><div class="i-amphtml-story-spinner-container"><div class="i-amphtml-story-spinner-layer"><div class="i-amphtml-story-spinner-circle-clipper left"></div><div class="i-amphtml-story-spinner-circle-clipper right"></div></div></div></div>
-          
-        </amp-story-page>
 
 
         {story.link && story.lastheading && story.lastimage && (
-          <amp-story-page id={`page${story.slides.length + 1}`} key={story.length + 1} auto-advance-after="5s">
+          <amp-story-page id={`page${story.slides.length + 2}`} key={story.length + 1} auto-advance-after="5s">
             <amp-story-grid-layer template="vertical">
               <amp-img src={`${story.lastimage}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
             </amp-story-grid-layer>
