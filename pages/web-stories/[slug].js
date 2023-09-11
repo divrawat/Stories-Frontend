@@ -239,7 +239,7 @@ const Stories = ({ story, errorCode }) => {
         ))}
 
 
-        <amp-story-page id="i-amphtml-ad-page-1" i-amphtml-layout="container" role="region" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" auto-advance-to="page6" >
+        <amp-story-page id="i-amphtml-ad-page-1" i-amphtml-layout="container" >
 
           <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
