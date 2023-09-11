@@ -236,8 +236,10 @@ const Stories = ({ story, errorCode }) => {
               </amp-story-grid-layer>
             </amp-story-page>
 
+
+
             {i === 2 ? (
-              <amp-story-page ad="" aria-hidden="false" distance="0" id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page4" i-amphtml-advance-to="page4" auto-advance-to="page4" i-amphtml-visited="" active="">
+              <amp-story-page ad="" aria-hidden="false" distance="0" id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" auto-advance-to="page3" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
@@ -253,7 +255,7 @@ const Stories = ({ story, errorCode }) => {
 
 
             {i === 4 ? (
-              <amp-story-page ad="" aria-hidden="false" distance="0" id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page6" i-amphtml-advance-to="page6" auto-advance-to="page6" i-amphtml-visited="" active="">
+              <amp-story-page ad="" aria-hidden="false" distance="0" id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page4" i-amphtml-advance-to="page5" auto-advance-to="page5" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
@@ -275,7 +277,7 @@ const Stories = ({ story, errorCode }) => {
 
 
         {story.link && story.lastheading && story.lastimage && (
-          <amp-story-page id={`page${story.slides.length + 1}`} key={story.length + 1}>
+          <amp-story-page id={`page${story.slides.length + 1}`} key={story.length + 1} auto-advance-after="5s">
             <amp-story-grid-layer template="vertical">
               <amp-img src={`${story.lastimage}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
             </amp-story-grid-layer>
