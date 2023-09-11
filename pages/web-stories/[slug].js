@@ -241,7 +241,7 @@ const Stories = ({ story, errorCode }) => {
 
         ))}
 
-        <amp-story-page id={`page${story.slides.length + 1}`} i-amphtml-layout="container" >
+        {/* <amp-story-page id={`page${story.slides.length + 1}`} i-amphtml-layout="container" >
 
           <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
@@ -250,10 +250,7 @@ const Stories = ({ story, errorCode }) => {
 
           <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
 
-
-          {/* <div class="i-amphtml-story-spinner" aria-hidden="true" aria-label="Loading video"><div class="i-amphtml-story-spinner-container"><div class="i-amphtml-story-spinner-layer"><div class="i-amphtml-story-spinner-circle-clipper left"></div><div class="i-amphtml-story-spinner-circle-clipper right"></div></div></div></div> */}
-
-        </amp-story-page>
+        </amp-story-page> */}
 
 
 
