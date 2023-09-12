@@ -132,6 +132,11 @@ const Stories = ({ story, errorCode }) => {
 
   const head = () => (
     <Head>
+
+
+
+
+      
       <title >{`${story.title} - ${APP_NAME}`}</title>
       <meta charSet="utf-8" />
       {/* <meta name="viewport" content="width=device-width,minimum-scale=1" /> */}
@@ -165,6 +170,18 @@ const Stories = ({ story, errorCode }) => {
       <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} - Feed`} href="https://www.naukarisamachar.live/feed/" />
       <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} » Stories Feed`} href="https://www.naukarisamachar.live/web-stories/feed/" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ"/>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D18GTPG2SJ');
+</script>
+
 
 
     </Head>
@@ -219,7 +236,7 @@ const Stories = ({ story, errorCode }) => {
 
 
             {i === 2 ? (
-              <amp-story-page ad=""  id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
+              <amp-story-page ad=""  id="i-amphtml-ad-page-00" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
@@ -235,7 +252,7 @@ const Stories = ({ story, errorCode }) => {
             ) : null}
 
             {i === 5 ? (
-              <amp-story-page ad="" id="i-amphtml-ad-page-0" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" i-amphtml-visited="" active="">
+              <amp-story-page ad="" id="i-amphtml-ad-page-01" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
