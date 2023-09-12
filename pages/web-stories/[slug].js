@@ -193,7 +193,7 @@ const Stories = ({ story, errorCode }) => {
 
 
         {story.slides.map((slide, i) => (
-
+<>
             <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
               <amp-story-grid-layer template="vertical">
                 <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
@@ -207,10 +207,14 @@ const Stories = ({ story, errorCode }) => {
               </amp-story-grid-layer>
             </amp-story-page>
 
+            <Ads/>
+
+            </>
+
         ))}
 
 
-            <Ads/>
+            
 
 
       </amp-story>
