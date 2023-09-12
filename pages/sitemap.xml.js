@@ -1,35 +1,43 @@
-import { sitemap } from '../action/story'
-import { DOMAIN } from "../config"
+import { sitemap } from '../action/story';
+import { DOMAIN } from '../config';
 
-const Sitemap = ({ blogs }) => {
-  
-return(
-
+const generateXmlSitemap = (blogs) => {
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <loc>{`${DOMAIN}/`}</loc>
+    <url>
+      <loc>${DOMAIN}</loc>
+      <priority>1.0</priority>
+      <changefreq>daily</changefreq>
+    </url>
+    <url>
+    <loc>${DOMAIN}/web-stories</loc>
     <priority>1.0</priority>
     <changefreq>daily</changefreq>
+  </url>`;
 
-    {blogs.map(blog => (
-      <url key={blog._id}>
-        <loc>{`${DOMAIN}/web-stories/${blog.slug}`}</loc>
-        <lastmod>{blog.date}</lastmod>
-        <priority>0.8</priority>
-        <changefreq>monthly</changefreq>
-      </url>
-    ))}
-  </urlset>
+  blogs.forEach((blog) => {
+    xml += `
+    <url>
+      <loc>${`${DOMAIN}/web-stories/${blog.slug}`}</loc>
+      <lastmod>${blog.date}</lastmod>
+      <priority>0.8</priority>
+      <changefreq>monthly</changefreq>
+    </url>`;
+  });
 
-)
-    }
+  xml += '</urlset>';
+  return xml;
+};
 
+const Sitemap = () => null;
 
 export async function getServerSideProps({ res }) {
-  const blogs = await sitemap()
-  res.setHeader('Content-Type', 'text/xml')
-  return { props: { blogs } }
+  const blogs = await sitemap();
+  res.setHeader('Content-Type', 'text/xml');
+  res.write(generateXmlSitemap(blogs));
+  res.end();
+
+  return { props: {} };
 }
-
-
 
 export default Sitemap;
