@@ -133,7 +133,16 @@ const Stories = ({ story, errorCode }) => {
   const head = () => (
     <Head>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ"/>
+<script dangerouslySetInnerHTML={{
+  __html: `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date());
 
+    gtag('config', 'G-D18GTPG2SJ');
+  `
+}} />
 
 
       
@@ -170,18 +179,6 @@ const Stories = ({ story, errorCode }) => {
       <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} - Feed`} href="https://www.naukarisamachar.live/feed/" />
       <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} » Stories Feed`} href="https://www.naukarisamachar.live/web-stories/feed/" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ"/>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D18GTPG2SJ');
-</script>
-
 
 
     </Head>
