@@ -178,7 +178,7 @@ const Stories = ({ story, errorCode }) => {
     const [showAd, setShowAd] = useState(false);
   
     useEffect(() => {
-      if (story.length>4) {
+      if (story.slides.length>3) {
         setShowAd(true);
       }
     }, []);
