@@ -32,5 +32,5 @@ const Ads =()=>{
 
 
 
-export default dynamic(() => Promise.resolve(Ads), { ssr: false })
-// export default Ads
+// export default dynamic(() => Promise.resolve(Ads), { ssr: false })
+export default Ads

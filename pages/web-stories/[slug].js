@@ -4,24 +4,26 @@ import { API, DOMAIN, APP_NAME, MY_API } from "../../config";
 import Script from 'next/script';
 import { format } from 'date-fns';
 import React from "react";
-import Ads from "@/components/Ad";
+// import Ads from "@/components/Ad";
+import dynamic from "next/dynamic";
+const Ads = dynamic(() => import("@/components/Ad"));
 
 export const config = { amp: true };
 
+
+
 const Stories = ({ story, errorCode }) => {
-
-
 
   if (errorCode) {
     return (
-      <Layout>
+      <>
         <Head>
           <title>{`404 Error - ${APP_NAME}`}</title>
         </Head>
         <br /><br /><br /><br /><br /><br /><br /><br /><br />
         <div style={{ textAlign: "center", fontWeight: "800", fontSize: "30px", fontFamily: "sans-serif" }}>404 Error! Story Not Found</div>
         <br /><br /><br /><br /><br /><br /><br />
-      </Layout>
+        </>
     );
   }
 
@@ -259,7 +261,7 @@ const Stories = ({ story, errorCode }) => {
             }} />
         </amp-story-auto-ads> */}
 
-        
+
 
       </amp-story>
 
