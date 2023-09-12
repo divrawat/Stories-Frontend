@@ -4,9 +4,7 @@ import { API, DOMAIN, APP_NAME, MY_API } from "../../config";
 import Script from 'next/script';
 import { format } from 'date-fns';
 import React from "react";
-// import Ads from "@/components/Ad";
-import dynamic from "next/dynamic";
-const Ads = dynamic(() => import("@/components/Ad"));
+import Ads from "@/components/Ad";
 
 export const config = { amp: true };
 
