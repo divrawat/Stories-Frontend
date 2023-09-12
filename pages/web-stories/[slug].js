@@ -246,18 +246,7 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-        {/* <amp-story-auto-ads>
-          <script type="application/json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "ad-attributes": {
-                  "type": "adsense",
-                  "data-ad-client": "ca-pub-1721485376950080",
-                  "data-ad-slot": "6021303939",
-                }
-              })
-            }} />
-        </amp-story-auto-ads> */}
+        
 
       </amp-story>
 
