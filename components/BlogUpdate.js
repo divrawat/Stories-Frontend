@@ -20,13 +20,14 @@ const BlogUpdate = ({ router }) => {
         description: '',
         slug: '',
         link: '',
+        ads:'',
         lastheading:'',
         lastimage:'',
         publishstory: 'Update Story',
         slides: [],
     });
 
-    const { error, success, formData, publishstory, title, coverphoto, description, slug, slides, link, lastheading, lastimage } = values;
+    const { error, success, formData, publishstory, title, coverphoto, description, slug, slides, link, lastheading, lastimage, ads } = values;
     const token = getCookie('token');
 
     useEffect(() => {
@@ -88,7 +89,7 @@ const BlogUpdate = ({ router }) => {
                     // const isoDateString = data.date;
                     // const dateObject = parseISO(isoDateString);
 
-                    setValues({ ...values, title: data.title, description: data.description, slug: data.slug, coverphoto: data.coverphoto, link: data.link, lastheading:data.lastheading, lastimage:data.lastimage, slides: data.slides });
+                    setValues({ ...values, title: data.title, description: data.description, slug: data.slug, ads:data.ads, coverphoto: data.coverphoto, link: data.link, lastheading:data.lastheading, lastimage:data.lastimage, slides: data.slides });
                 }
             });
         }
@@ -110,13 +111,6 @@ const BlogUpdate = ({ router }) => {
         formData.set('slides', JSON.stringify(updatedSlides));
     };
 
-    // const handleDateChange = (date) => {
-    //     const name = 'date';
-    //     const value = date;
-    //     const { formData } = values;
-    //     formData.set(name, value);
-    //     setValues({ ...values, [name]: value, formData, error: '' });
-    // };
 
 
     const handletitle = name => e => {
@@ -155,8 +149,6 @@ const BlogUpdate = ({ router }) => {
 
                           <div>  <input className={styles.coverphoto} placeholder='Cover Photo Link' value={coverphoto} onChange={handletitle("coverphoto")} /></div>
 
-                            {/* <DatePicker id='date' autoComplete="off" onChange={handleDateChange} className={styles.datepick} placeholderText='Date'
-                                selected={values.date} minDate={new Date()} showYearDropdown dateFormat="dd MMM, yyyy" /> */}
 
 
                             <div className={styles.textarea}>
