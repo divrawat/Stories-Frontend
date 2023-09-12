@@ -218,40 +218,73 @@ const Stories = ({ story, errorCode }) => {
             </amp-story-page>
 
 
+            {i === 2 ? (
+              <amp-story-page ad="" id="ads" i-amphtml-layout="container" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-advance-to="page3" i-amphtml-return-to="page2">
+                <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
+                  <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
+
+                </amp-story-grid-layer>
+
+                <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
+              </amp-story-page>
+
+            ) : null}
+
+
+
+
+            {i === 4 ? (
+              <amp-story-page ad="" id="ads" i-amphtml-layout="container" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-advance-to="page5" i-amphtml-return-to="page4">
+                <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
+
+                  <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="2" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
+
+                </amp-story-grid-layer>
+
+                <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
+              </amp-story-page>
+
+            ) : null}
 
           </>
         ))}
 
-        <amp-story-page ad="" id="ads" i-amphtml-layout="container" >
-          <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
-
-            <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
-
-          </amp-story-grid-layer>
-
-          <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
-        </amp-story-page>
 
 
 
 
-        <amp-story-page id="dsgf" key={story.length + 2} auto-advance-after="5s">
-      <amp-story-grid-layer template="vertical">
-        <amp-img src={`${story.lastimage}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
-      </amp-story-grid-layer>
-
-      <amp-story-grid-layer template="vertical" className="bottom">
-        <h3 animate-in="fade-in" animate-in-delay="0.2s" animate-in-duration="0.5s">{story.lastheading}</h3>
-      </amp-story-grid-layer>
-
-      <amp-story-cta-layer>
-        <a href={`${story.link}`} className="button">Click Here</a>
-      </amp-story-cta-layer>
-    </amp-story-page>
 
 
+        {story.link && story.lastheading && story.lastimage && (
+          <amp-story-page id={`page${story.slides.length + 1}`} key={story.length + 1}>
+            <amp-story-grid-layer>
+              <amp-img src={`${story.lastimage}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
+            </amp-story-grid-layer>
 
+            <amp-story-grid-layer template="vertical" className="bottom">
+              <h3 animate-in="fade-in" animate-in-delay="0.2s" animate-in-duration="0.5s">{story.lastheading}</h3>
+            </amp-story-grid-layer>
+
+            <amp-story-cta-layer>
+              <a href={`${story.link}`} className="button">Click Here</a>
+            </amp-story-cta-layer>
+          </amp-story-page>
+        )}
+
+
+        <amp-story-auto-ads>
+          <script type="application/json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "ad-attributes": {
+                  "type": "adsense",
+                  "data-ad-client": "ca-pub-1721485376950080",
+                  "data-ad-slot": "6021303939",
+                }
+              })
+            }} />
+        </amp-story-auto-ads>
 
       </amp-story>
 
