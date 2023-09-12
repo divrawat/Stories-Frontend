@@ -193,7 +193,7 @@ const Stories = ({ story, errorCode }) => {
 
 
         {story.slides.map((slide, i) => (
-
+<>
           <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
             <amp-story-grid-layer template="vertical">
               <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
@@ -207,13 +207,25 @@ const Stories = ({ story, errorCode }) => {
             </amp-story-grid-layer>
           </amp-story-page>
 
+          {i === 2 && (
+    <amp-story-page ad id="ads" i-amphtml-layout="container" >
+    <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
+      <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
+    </amp-story-grid-layer>
 
+    <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
+  </amp-story-page>
+  )}
+</>
         ))}
 
-        <Ads />
 
+
+        
       </amp-story>
+
+
 
     </>
   );
