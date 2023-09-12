@@ -1,6 +1,7 @@
+
+/*
+
 import dynamic from "next/dynamic"
-
-
 
 const Ads =()=>{
     return(
@@ -23,14 +24,8 @@ const Ads =()=>{
 }
 
 
-
-
-
-
-
-
-
-
-
 export default dynamic(() => Promise.resolve(Ads), { ssr: false })
 // export default Ads
+
+
+*/
