@@ -234,8 +234,8 @@ const Stories = ({ story, errorCode }) => {
 
             ) : null}
 
-            {i === 6 ? (
-              <amp-story-page ad="" id="i-amphtml-ad-page-0" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page6" i-amphtml-advance-to="page7" i-amphtml-visited="" active="">
+            {i === 5 ? (
+              <amp-story-page ad="" id="i-amphtml-ad-page-0" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
