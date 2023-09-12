@@ -6,7 +6,7 @@ const Ads =()=>{
     return(
         <>
         
-        <amp-story-page id={`page${story.slides.length + 1}`} i-amphtml-layout="container" >
+        <amp-story-page id="page000" i-amphtml-layout="container" >
 
           <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
