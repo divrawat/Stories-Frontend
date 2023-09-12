@@ -4,7 +4,7 @@ import { API, DOMAIN, APP_NAME, MY_API } from "../../config";
 import Script from 'next/script';
 import { format } from 'date-fns';
 import React from "react";
-import Ads from "@/components/Testing";
+import { useEffect, useState } from 'react';
 
 export const config = { amp: true };
 
@@ -24,6 +24,15 @@ const Stories = ({ story, errorCode }) => {
       </>
     );
   }
+
+
+
+
+
+
+
+
+
 
 
   const schema = {
@@ -164,6 +173,18 @@ const Stories = ({ story, errorCode }) => {
 
   const date0 = new Date(story.date);
   const formattedDate = format(date0, 'dd MMM, yyyy');
+
+
+    const [showAd, setShowAd] = useState(false);
+  
+    useEffect(() => {
+      if (story.length>4) {
+        setShowAd(true);
+      }
+    }, []);
+
+
+
   return (
 
     <>
@@ -207,7 +228,7 @@ const Stories = ({ story, errorCode }) => {
             </amp-story-grid-layer>
           </amp-story-page>
 
-          {i === 2 && (
+          {showAd && ( 
     <amp-story-page ad id="ads" i-amphtml-layout="container" >
     <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
