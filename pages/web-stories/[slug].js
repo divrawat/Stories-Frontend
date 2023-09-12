@@ -21,7 +21,7 @@ const Stories = ({ story, errorCode }) => {
         <br /><br /><br /><br /><br /><br /><br /><br /><br />
         <div style={{ textAlign: "center", fontWeight: "800", fontSize: "30px", fontFamily: "sans-serif" }}>404 Error! Story Not Found</div>
         <br /><br /><br /><br /><br /><br /><br />
-        </>
+      </>
     );
   }
 
@@ -193,29 +193,25 @@ const Stories = ({ story, errorCode }) => {
 
 
         {story.slides.map((slide, i) => (
-<>
-            <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
-              <amp-story-grid-layer template="vertical">
-                <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
-              </amp-story-grid-layer>
 
-              <amp-story-grid-layer template="vertical" className="bottom">
-                {slide.heading && (
-                  <h2 animate-in="fade-in" animate-in-delay="0.2s" animate-in-duration="0.5s">{slide.heading}</h2>
-                )}
-                <p animate-in="fade-in" animate-in-delay="0.3s" animate-in-duration="0.5s">{slide.paragraph}</p>
-              </amp-story-grid-layer>
-            </amp-story-page>
+          <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
+            <amp-story-grid-layer template="vertical">
+              <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
+            </amp-story-grid-layer>
 
-            <Ads/>
+            <amp-story-grid-layer template="vertical" className="bottom">
+              {slide.heading && (
+                <h2 animate-in="fade-in" animate-in-delay="0.2s" animate-in-duration="0.5s">{slide.heading}</h2>
+              )}
+              <p animate-in="fade-in" animate-in-delay="0.3s" animate-in-duration="0.5s">{slide.paragraph}</p>
+            </amp-story-grid-layer>
+          </amp-story-page>
 
-            </>
+
 
         ))}
 
-
-            
-
+        <Ads />
 
       </amp-story>
 
