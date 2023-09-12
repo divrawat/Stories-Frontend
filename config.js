@@ -1,7 +1,15 @@
 
+export const API = "https://stories-backend-six.vercel.app/api";
+export const DOMAIN = "https://stories.naukarisamachar.live";
+export const APP_NAME = 'MyStories';
+export const MY_API="https://stories-backend-six.vercel.app";
 
     
-    const publicRuntimeConfig = {
+   
+        
+/*
+
+ const publicRuntimeConfig = {
         APP_NAME: 'MyStories',
         APP_DESCRIPTION:'Stories is a news website that delivers content on the basis of web stories.', 
         API_DEVELOPMENT: 'http://localhost:8000',
@@ -11,9 +19,9 @@
         DOMAIN_DEVELOPMENT:"http://localhost:3000",
         DOMAIN_PRODUCTION:"https://stories.naukarisamachar.live",
         }
-        
 
-    export const MY_API=publicRuntimeConfig.MY_API;
+
+export const MY_API=publicRuntimeConfig.MY_API;
 
 
     export const API = publicRuntimeConfig.PRODUCTION
@@ -26,7 +34,7 @@ export const DOMAIN = publicRuntimeConfig.PRODUCTION
     ? publicRuntimeConfig.DOMAIN_PRODUCTION
     : publicRuntimeConfig.DOMAIN_DEVELOPMENT;
 
-    /*
+    
 const publicRuntimeConfig = {
     APP_NAME: 'Stories',
     APP_DESCRIPTION:'', 
