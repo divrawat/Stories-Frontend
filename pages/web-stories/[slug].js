@@ -1,10 +1,10 @@
 import Head from "next/head";
 import { singleStory } from "@/action/story";
-import Layout from "@/components/Layout";
 import { API, DOMAIN, APP_NAME, MY_API } from "../../config";
 import Script from 'next/script';
 import { format } from 'date-fns';
 import React from "react";
+import Ads from "@/components/Ad";
 
 export const config = { amp: true };
 
@@ -192,35 +192,6 @@ const Stories = ({ story, errorCode }) => {
         </amp-story-page>
 
 
-        {/* {story.slides.map((slide, i) => (
-          <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
-
-            <amp-story-grid-layer template="vertical">
-              <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
-            </amp-story-grid-layer>
-
-            <amp-story-grid-layer template="vertical" className="bottom">
-              {slide.heading && (<h2 animate-in="fade-in" animate-in-delay="0.2s" animate-in-duration="0.5s">{slide.heading}</h2>)}
-              <p animate-in="fade-in" animate-in-delay="0.3s" animate-in-duration="0.5s">{slide.paragraph}</p>
-            </amp-story-grid-layer>
-          </amp-story-page>
-
-        ))}
-
-
-
-        <amp-story-page ad="" aria-hidden="false" distance="0" id="i-amphtml-ad-page-1" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" auto-advance-to="page6" i-amphtml-visited="" active="">
-
-          <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
-
-            <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" class="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" layout="fill" amp-story="" i-amphtml-layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
-
-            <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
-            <div class="i-amphtml-story-spinner" aria-hidden="true" aria-label="Loading video"><div class="i-amphtml-story-spinner-container"><div class="i-amphtml-story-spinner-layer"><div class="i-amphtml-story-spinner-circle-clipper left"></div><div class="i-amphtml-story-spinner-circle-clipper right"></div></div></div></div>
-          </amp-story-grid-layer>
-        </amp-story-page> */}
-
-
         {story.slides.map((slide, i) => (
 
           <>
@@ -240,6 +211,9 @@ const Stories = ({ story, errorCode }) => {
           </>
 
         ))}
+
+
+<Ads/>
 
         {/* <amp-story-page id={`page${story.slides.length + 1}`} i-amphtml-layout="container" >
 
@@ -272,7 +246,7 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-        <amp-story-auto-ads>
+        {/* <amp-story-auto-ads>
           <script type="application/json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
@@ -283,7 +257,7 @@ const Stories = ({ story, errorCode }) => {
                 }
               })
             }} />
-        </amp-story-auto-ads>
+        </amp-story-auto-ads> */}
 
       </amp-story>
 
