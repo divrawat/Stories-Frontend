@@ -20,13 +20,14 @@ const CreateStory = () => {
         description: '',
         slug: '',
         link: '',
+        ads:'',
         lastheading: '',
         lastimage: '',
         publishstory: 'Publish Story',
         slides: Array(7).fill({ image: '', heading: '', paragraph: '' }),
     });
 
-    const { error, success, formData, publishstory, title, coverphoto, description, slug, slides, link, lastheading, lastimage } = values;
+    const { error, success, formData, publishstory, title, coverphoto, description, slug, slides, link, lastheading, lastimage, ads } = values;
     const token = getCookie('token');
 
 
@@ -60,15 +61,6 @@ const CreateStory = () => {
         formData.set('slides', JSON.stringify(updatedSlides));
     };
 
-    const handleDateChange = (date) => {
-        const name = 'date';
-        const value = date;
-        const { formData } = values;
-        formData.set(name, value);
-        setValues({ ...values, [name]: value, formData, error: '' });
-    };
-
-
 
     const handletitle = name => e => {
         const value = e.target.value;
@@ -93,7 +85,7 @@ const CreateStory = () => {
         createwebstory(formData, token).then(data => {
             if (data.error) { setValues({ ...values, error: data.error }); }
             else {
-                setValues({ ...values, title: '', link: '', description: '', link: '', slides: [], coverphoto: '', slug: '', error: '', success: `A story titled "${data.title}" is created` });
+                setValues({ ...values, title: '', link: '', description: '', link: '', slides: [], coverphoto: '', ads:'', slug: '', error: '', success: `A story titled "${data.title}" is created` });
                 let storyslug = slugify(slug).toLowerCase();
                 function redirect() {
                     Router.replace(`/web-stories/${storyslug}`);
@@ -122,11 +114,6 @@ const CreateStory = () => {
                       <div>  <input className={styles.coverphoto} placeholder='Cover Photo Link' value={coverphoto} onChange={handletitle("coverphoto")} /></div>
 
 
-                        {/* <DatePicker id='date' autoComplete="off" onChange={handleDateChange} className={styles.datepick} placeholderText='Date'
-                            selected={values.date ? new Date(values.date) : null}
-                            minDate={new Date()} showYearDropdown dateFormat="dd MMM, yyyy" timeZone="Asia/Kolkata" /> */}
-
-
 
                         <div className={styles.textarea}>
                             <textarea placeholder='Description' value={description} onChange={handletitle("description")} />
@@ -134,7 +121,9 @@ const CreateStory = () => {
 
                         <input className={styles.slug} value={slug} placeholder='slug' onChange={handletitle("slug")} />
 
-                        <br/><br/> <br/><br/> <br/><br/><br/><br/> <br/><br/> <br/><br/>
+                        <br/><br/> <br/><br/> <br/><br/><br/><br/>
+                        <input className={styles.slug} value={ads} placeholder='Ads ?' onChange={handletitle("ads")} />
+                         <br/><br/> <br/><br/>
 
                         <input className={styles.slug} value={link} placeholder='Swipe Up Link' onChange={handletitle("link")} />
                         <input className={styles.slug} value={lastimage} placeholder='Image' onChange={handletitle("lastimage")} />

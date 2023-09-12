@@ -4,7 +4,6 @@ import { API, DOMAIN, APP_NAME, MY_API } from "../../config";
 import Script from 'next/script';
 import { format } from 'date-fns';
 import React from "react";
-import { useEffect, useState } from 'react';
 
 export const config = { amp: true };
 
@@ -232,7 +231,7 @@ const Stories = ({ story, errorCode }) => {
             </amp-story-page>
 
 
-            {i === 2 ? (
+            {i === 2 && slide.ads ? (
               <amp-story-page ad=""  id="i-amphtml-ad-page-00" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
@@ -248,7 +247,7 @@ const Stories = ({ story, errorCode }) => {
 
             ) : null}
 
-            {i === 5 ? (
+            {i === 5 && slide.ads ? (
               <amp-story-page ad="" id="i-amphtml-ad-page-01" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
@@ -262,6 +261,8 @@ const Stories = ({ story, errorCode }) => {
 
               </amp-story-page>
             ) : null}
+
+
 
           </>
         ))}
