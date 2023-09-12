@@ -222,7 +222,7 @@ const Stories = ({ story, errorCode }) => {
               <amp-story-page ad="" id="ads" i-amphtml-layout="container" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-advance-to="page3" i-amphtml-return-to="page2">
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
-                  <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
+                  <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" class="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" i-amphtml-layout="fill" ></amp-ad>
 
                 </amp-story-grid-layer>
 
@@ -234,11 +234,11 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-            {i === 4 ? (
-              <amp-story-page ad="" id="ads" i-amphtml-layout="container" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-advance-to="page5" i-amphtml-return-to="page4">
+{i === 6 ? (
+              <amp-story-page ad="" id="ads" i-amphtml-layout="container" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-advance-to="page7" i-amphtml-return-to="page6">
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
-                  <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="2" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
+                  <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" class="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" i-amphtml-layout="fill" ></amp-ad>
 
                 </amp-story-grid-layer>
 
