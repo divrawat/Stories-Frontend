@@ -1,26 +1,46 @@
-export default function Ads() {
-    return (
-        <amp-story-page id="ads" i-amphtml-layout="container" >
+// export default function Ads() {
+//     return (
+//         <amp-story-page id="ads" i-amphtml-layout="container" >
 
-        <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
+//         <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
-          <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
-        </amp-story-grid-layer>
+//           <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
+//         </amp-story-grid-layer>
 
-        <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
+//         <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
 
-      </amp-story-page>
-    );
-  }
-  
-  export const styles = css`
-    #ads {
-      display: none;
-    }
-  
-    @media (prefers-reduced-motion: no-preference) {
-      #ads {
-        display: block;
+//       </amp-story-page>
+//     );
+//   }
+
+
+
+import React, { useEffect } from 'react';
+
+function Ads() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const adsComponent = document.getElementById('ads');
+      if (adsComponent) {
+        adsComponent.style.display = 'block';
       }
-    }
-  `;
+    }, 3000); // 3 seconds delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <amp-story-page id="ads" i-amphtml-layout="container" >
+
+         <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
+
+           <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
+         </amp-story-grid-layer>
+
+         <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
+
+       </amp-story-page>
+  );
+}
+
+export default Ads;
