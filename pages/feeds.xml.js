@@ -6,9 +6,9 @@ import { APP_NAME, DOMAIN } from '@/config';
 const generateRssItem = (post) => `
   <item>
     <title>${post.title}</title>
-    <link>${DOMAIN}/${post.slug}</link>
+    <link>${DOMAIN}/web-stories/${post.slug}</link>
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-    <guid>${DOMAIN}/${post.slug}</guid>
+    <guid>${DOMAIN}/web-stories/${post.slug}</guid>
     <dc:creator><![CDATA[divrawat]]></dc:creator>
     <description><![CDATA[${post.description}]]></description>
     <image

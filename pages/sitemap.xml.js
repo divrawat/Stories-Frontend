@@ -12,7 +12,7 @@ return(
 
     {blogs.map(blog => (
       <url key={blog._id}>
-        <loc>{`${DOMAIN}/${blog.slug}`}</loc>
+        <loc>{`${DOMAIN}/web-stories/${blog.slug}`}</loc>
         <lastmod>{blog.date}</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
