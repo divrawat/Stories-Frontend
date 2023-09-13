@@ -182,21 +182,6 @@ const Stories = ({ story, errorCode }) => {
       <Script custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js" async />
 
 
-      {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ" />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-      
-          gtag('config', 'G-D18GTPG2SJ');
-        `}
-      </Script> */}
-
-
-
-
-
 
       <amp-story standalone="" title={`${story.title}`} publisher={`${APP_NAME}`} publisher-logo-src="http://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-1.png" poster-portrait-src={`${story.coverphoto}`} >
 
