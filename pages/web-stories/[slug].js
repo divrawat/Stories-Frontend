@@ -182,7 +182,7 @@ const Stories = ({ story, errorCode }) => {
       <Script custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js" async />
 
 
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ" />
+      {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ" />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -191,7 +191,9 @@ const Stories = ({ story, errorCode }) => {
       
           gtag('config', 'G-D18GTPG2SJ');
         `}
-      </Script>
+      </Script> */}
+
+
 
 
 
