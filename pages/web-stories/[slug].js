@@ -180,17 +180,18 @@ const Stories = ({ story, errorCode }) => {
       <Script src="https://cdn.ampproject.org/v0.js" async />
       <Script custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js" async />
       <Script custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js" async />
-      
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ" />8
-      <Script dangerouslySetInnerHTML={{
-        __html: `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments)}
-    gtag('js', new Date());
 
-    gtag('config', 'G-D18GTPG2SJ');
-  `
-      }} />
+
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+      
+          gtag('config', 'G-D18GTPG2SJ');
+        `}
+      </Script>
 
 
 
