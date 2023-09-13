@@ -1,5 +1,5 @@
 import Document from 'next/document';
-import { Html} from 'next/document';
+// import { Html} from 'next/document';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -8,9 +8,7 @@ export default class MyDocument extends Document {
       ...initialProps,
       styles: (
         <>
-          <Html lang="pa">
 
-          </Html>
           {initialProps.styles}
           <style amp-custom="" dangerouslySetInnerHTML={{
             __html: ` amp-story-page {

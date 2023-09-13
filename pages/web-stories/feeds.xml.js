@@ -29,7 +29,7 @@ const generateRss = (posts) => `
       <atom:link href="${DOMAIN}/feeds/" rel="self" type="application/rss+xml" />
       <link>${DOMAIN}</link>
       <description>Your site description goes here.</description>
-      <language>en-US</language>
+      <language>pa</language>
       <ttl>30</ttl>
       <generator>Next.js</generator>
 

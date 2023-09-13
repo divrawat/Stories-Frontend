@@ -58,7 +58,7 @@ const Stories = ({ story, errorCode }) => {
         "publisher": {
           "@id": `${DOMAIN}/#organization`
         },
-        "inLanguage": "en-US"
+        "inLanguage": "pa"
       },
       {
         "@type": "ImageObject",
@@ -67,7 +67,7 @@ const Stories = ({ story, errorCode }) => {
         "width": "640",
         "height": "853",
         "caption": `${story.title}`,
-        "inLanguage": "en-US"
+        "inLanguage": "pa"
       },
       {
         "@type": "WebPage",
@@ -82,7 +82,7 @@ const Stories = ({ story, errorCode }) => {
         "primaryImageOfPage": {
           "@id": `${story.coverphoto}`
         },
-        "inLanguage": "en-US"
+        "inLanguage": "pa"
       },
       {
         "@type": "Person",
@@ -94,7 +94,7 @@ const Stories = ({ story, errorCode }) => {
           "@id": "https://secure.gravatar.com/avatar/25963693bf3ce6efc77eb7ed7d5f4228?s=96&amp;d=mm&amp;r=g",
           "url": "https://secure.gravatar.com/avatar/25963693bf3ce6efc77eb7ed7d5f4228?s=96&amp;d=mm&amp;r=g",
           "caption": "Divyansh Rawal",
-          "inLanguage": "en-US"
+          "inLanguage": "pa"
         },
         "worksFor": {
           "@id": `${DOMAIN}/#organization`
@@ -120,7 +120,7 @@ const Stories = ({ story, errorCode }) => {
         "image": {
           "@id": `${story.coverphoto}`
         },
-        "inLanguage": "en-US",
+        "inLanguage": "pa",
         "mainEntityOfPage": {
           "@id": `${DOMAIN}/${story.slug}/#webpage`
         }
@@ -132,24 +132,10 @@ const Stories = ({ story, errorCode }) => {
   const head = () => (
     <Head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ"/>
-<script dangerouslySetInnerHTML={{
-  __html: `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments)}
-    gtag('js', new Date());
-
-    gtag('config', 'G-D18GTPG2SJ');
-  `
-}} />
-
-
-      
-      <title >{`${story.title} - ${APP_NAME}`}</title>
+      <title>{`${story.title} - ${APP_NAME}`}</title>
       <meta charSet="utf-8" />
-      {/* <meta name="viewport" content="width=device-width,minimum-scale=1" /> */}
       <meta name="description" content={`${story.description}`} />
-      <meta name="robots" content="follow, index, noarchive, max-snippet:-1, max-video-preview:-1, max-image-preview:large"></meta>
+      <meta name="robots" content="follow, index, noarchive, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="article" />
       <link rel="preconnect" href="https://cdn.ampproject.org" />
@@ -194,7 +180,17 @@ const Stories = ({ story, errorCode }) => {
       <Script src="https://cdn.ampproject.org/v0.js" async />
       <Script custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js" async />
       <Script custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js" async />
+      
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ" />8
+      <Script dangerouslySetInnerHTML={{
+        __html: `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date());
 
+    gtag('config', 'G-D18GTPG2SJ');
+  `
+      }} />
 
 
 
@@ -232,7 +228,7 @@ const Stories = ({ story, errorCode }) => {
 
 
             {i === 2 && slide.ads ? (
-              <amp-story-page ad=""  id="i-amphtml-ad-page-00" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
+              <amp-story-page ad="" id="i-amphtml-ad-page-00" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
 
