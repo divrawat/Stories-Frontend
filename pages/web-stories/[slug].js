@@ -131,6 +131,18 @@ const Stories = ({ story, errorCode }) => {
 
   const head = () => (
     <Head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ" />
+
+      <script dangerouslySetInnerHTML={{
+        __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date());
+gtag('config', 'G-D18GTPG2SJ');
+`
+      }} />
+
+
 
       <title>{`${story.title} - ${APP_NAME}`}</title>
       <meta charSet="utf-8" />
