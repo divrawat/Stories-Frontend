@@ -131,18 +131,6 @@ const Stories = ({ story, errorCode }) => {
 
   const head = () => (
     <Head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-D18GTPG2SJ" />
-
-      <script dangerouslySetInnerHTML={{
-        __html: `
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments)}
-gtag('js', new Date());
-gtag('config', 'G-D18GTPG2SJ');
-`
-      }} />
-
-
 
       <title>{`${story.title} - ${APP_NAME}`}</title>
       <meta charSet="utf-8" />
@@ -192,6 +180,7 @@ gtag('config', 'G-D18GTPG2SJ');
       <Script src="https://cdn.ampproject.org/v0.js" async />
       <Script custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js" async />
       <Script custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js" async />
+      <Script custom-element="amp-story-auto-analytics" src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js" async/>
 
 
 
@@ -284,6 +273,12 @@ gtag('config', 'G-D18GTPG2SJ');
             </amp-story-cta-layer>
           </amp-story-page>
         )}
+
+
+
+<amp-story-auto-analytics gtag-id="G-D18GTPG2SJ" class="i-amphtml-layout-container" i-amphtml-layout="container"></amp-story-auto-analytics>
+
+
 
 
         <amp-story-auto-ads>
