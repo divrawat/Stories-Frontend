@@ -26,14 +26,6 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-
-
-
-
-
-
-
-
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -131,7 +123,6 @@ const Stories = ({ story, errorCode }) => {
 
   const head = () => (
     <Head>
-
       <title>{`${story.title} - ${APP_NAME}`}</title>
       <meta charSet="utf-8" />
       <meta name="description" content={`${story.description}`} />
