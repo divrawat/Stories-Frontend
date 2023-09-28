@@ -1,7 +1,7 @@
 
 export const API = "https://stories-backend-six.vercel.app/api";
-export const DOMAIN = "https://stories.naukarisamachar.live";
-export const APP_NAME = 'MyStories';
+export const DOMAIN = "https://stories.liquorprices.in";
+export const APP_NAME = 'Stories';
 export const MY_API="https://stories-backend-six.vercel.app";
 
     

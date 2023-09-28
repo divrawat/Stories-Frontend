@@ -35,8 +35,8 @@ const Stories = ({ story, errorCode }) => {
         "name": `${APP_NAME}`,
         "logo": {
           "@type": "ImageObject",
-          "@id": "https://www.naukarisamachar.live/#logo",
-          "url": "https://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-1.png",
+          "@id": "https://www.liquorprices.in/#logo",
+          "url": "https://www.liquorprices.in/wp-content/uploads/2023/06/cropped-Logo-1.png",
           "width": "96",
           "height": "96"
         }
@@ -78,9 +78,9 @@ const Stories = ({ story, errorCode }) => {
       },
       {
         "@type": "Person",
-        "@id": "https://www.naukarisamachar.live/author/divrawat2001/",
+        "@id": "https://www.liquorprices.in/author/divrawat2001/",
         "name": "Divyansh Rawal",
-        "url": "https://www.naukarisamachar.live/author/divrawat2001/",
+        "url": "https://www.liquorprices.in/author/divrawat2001/",
         "image": {
           "@type": "ImageObject",
           "@id": "https://secure.gravatar.com/avatar/25963693bf3ce6efc77eb7ed7d5f4228?s=96&amp;d=mm&amp;r=g",
@@ -98,7 +98,7 @@ const Stories = ({ story, errorCode }) => {
         "datePublished": `${story.date}`,
         "dateModified": `${story.date}`,
         "author": {
-          "@id": "https://www.naukarisamachar.live/author/divrawat2001/",
+          "@id": "https://www.liquorprices.in/author/divrawat2001/",
           "name": "Divyansh Rawal"
         },
         "publisher": {
@@ -147,13 +147,13 @@ const Stories = ({ story, errorCode }) => {
 
       <meta property="article:published_time" content={`${story.date}`} />
       <meta property="article:modified_time" content={`${story.date}`} />
-      <link rel="icon" href="https://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-32x32.png" sizes="32x32" />
-      <link rel="icon" href="https://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-192x192.png" sizes="192x192" />
+      <link rel="icon" href="https://www.liquorprices.in/wp-content/uploads/2023/08/cropped-logologo-32x32.png" sizes="32x32" />
+      <link rel="icon" href="https://www.liquorprices.in/wp-content/uploads/2023/08/cropped-logologo-192x192.png" sizes="192x192" />
       <link rel={`${MY_API}`} href={`${API}`} />
       <link rel="alternate" type="application/json" href={`${API}/webstories/${story.slug}`} />
-      <link rel="apple-touch-icon" href="https://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-180x180.png" />
-      <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} - Feed`} href="https://www.naukarisamachar.live/feed/" />
-      <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} » Stories Feed`} href="https://www.naukarisamachar.live/web-stories/feed/" />
+      <link rel="apple-touch-icon" href="https://www.liquorprices.in/wp-content/uploads/2023/08/cropped-logologo-180x180.png" />
+      <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} - Feed`} href="https://www.liquorprices.in/feed/" />
+      <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} » Stories Feed`} href="https://www.liquorprices.in/web-stories/feed/" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
 
@@ -175,7 +175,7 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-      <amp-story standalone="" title={`${story.title}`} publisher={`${APP_NAME}`} publisher-logo-src="http://www.naukarisamachar.live/wp-content/uploads/2023/06/cropped-Logo-1.png" poster-portrait-src={`${story.coverphoto}`} >
+      <amp-story standalone="" title={`${story.title}`} publisher={`${APP_NAME}`} publisher-logo-src="http://www.liquorprices.in/wp-content/uploads/2023/09/logologo.png" poster-portrait-src={`${story.coverphoto}`} >
 
 
         <amp-story-page id="cover" className="myclass" auto-advance-after="4s">
