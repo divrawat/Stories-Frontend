@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { singleStory } from "@/action/story";
+import { singleStory,allslugs } from "@/action/story";
 import { API, DOMAIN, APP_NAME, MY_API } from "../../config";
 import Script from 'next/script';
 import { format } from 'date-fns';
@@ -296,7 +296,7 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-
+/*
 export async function getServerSideProps({ query, res }) {
   try {
     const data = await singleStory(query.slug);
@@ -308,6 +308,34 @@ export async function getServerSideProps({ query, res }) {
   } catch (error) {
     console.error(error);
     return { props: { errorCode: 500 } };
+  }
+}
+*/
+
+export async function getStaticPaths() {
+  const slugs = await allslugs();
+
+const excludedSlugs = ['/admin/edit-blogs'];
+const filteredSlugs = slugs.filter((slugObject) => !excludedSlugs.includes(slugObject.slug));
+const paths = filteredSlugs.map((slugObject) => ({ params: { slug: slugObject.slug } }));
+
+return { paths, fallback: "blocking" };
+}
+
+
+
+
+export async function getStaticProps({ params, res }) {
+  try {
+      const data = await singleStory(params.slug);
+      if (!data) {
+          res.statusCode = 404;
+          return { props: { errorCode: 404 } };
+      }
+      return { props: { story: data } };
+  } catch (error) {
+      console.error(error);
+      return { props: { errorCode: 500 } };
   }
 }
 

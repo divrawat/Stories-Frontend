@@ -41,6 +41,21 @@ export const list = async() => {
     }
 };
 
+
+export const allslugs = async() => {
+    try {
+        const response = await fetch(`${API}/allslugs`, {
+            method: 'GET'
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
+};
+
+
+
+
 export const sitemap = async() => {
     try {
         const response = await fetch(`${API}/sitemap`, {
