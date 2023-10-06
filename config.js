@@ -8,9 +8,7 @@
 export const APP_NAME = 'Stories';
 export const MY_API="https://stories-backend-six.vercel.app";
 
-    
-   
-        
+
 /*
 
  const publicRuntimeConfig = {
