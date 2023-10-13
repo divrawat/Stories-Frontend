@@ -1,13 +1,10 @@
 import Head from "next/head";
-import { singleStory,allslugs } from "@/action/story";
+import { singleStory, allslugs } from "@/action/story";
 import { API, DOMAIN, APP_NAME, MY_API } from "../../config";
 import Script from 'next/script';
 import { format } from 'date-fns';
-import React from "react";
-
 export const config = { amp: true };
-
-
+import React from "react";
 
 const Stories = ({ story, errorCode }) => {
 
@@ -23,8 +20,6 @@ const Stories = ({ story, errorCode }) => {
       </>
     );
   }
-
-
 
   const schema = {
     "@context": "https://schema.org",
@@ -144,7 +139,6 @@ const Stories = ({ story, errorCode }) => {
       <meta property="og:image:type" content="image/jpeg" />
       <link rel="canonical" href={`${DOMAIN}/web-stories/${story.slug}`} />
       <link rel="amphtml" href={`${DOMAIN}/web-stories/${story.slug}`} />
-
       <meta property="article:published_time" content={`${story.date}`} />
       <meta property="article:modified_time" content={`${story.date}`} />
       <link rel="icon" href="https://www.liquorprices.in/wp-content/uploads/2023/08/cropped-logologo-32x32.png" sizes="32x32" />
@@ -155,11 +149,8 @@ const Stories = ({ story, errorCode }) => {
       <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} - Feed`} href="https://www.liquorprices.in/feed/" />
       <link rel="alternate" type="application/rss+xml" title={`${APP_NAME} » Stories Feed`} href="https://www.liquorprices.in/web-stories/feed/" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-
-
     </Head>
   );
-
 
   const date0 = new Date(story.date);
   const formattedDate = format(date0, 'dd MMM, yyyy');
@@ -173,10 +164,7 @@ const Stories = ({ story, errorCode }) => {
       <Script custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js" async />
       <Script custom-element="amp-story-auto-analytics" src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js" async/>
 
-
-
       <amp-story standalone="" title={`${story.title}`} publisher={`${APP_NAME}`} publisher-logo-src="http://www.liquorprices.in/wp-content/uploads/2023/09/logologo.png" poster-portrait-src={`${story.coverphoto}`} >
-
 
         <amp-story-page id="cover" className="myclass" auto-advance-after="4s">
           <amp-story-grid-layer template="vertical">
@@ -190,9 +178,8 @@ const Stories = ({ story, errorCode }) => {
           </amp-story-grid-layer>
         </amp-story-page>
 
-
         {story.slides.map((slide, i) => (
-          <>
+         <React.Fragment key={i}>
             <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
               <amp-story-grid-layer template="vertical">
                 <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
@@ -208,49 +195,31 @@ const Stories = ({ story, errorCode }) => {
 
 
             {i === 2 && slide.ads ? (
-              <amp-story-page ad="" id="i-amphtml-ad-page-00" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
-
+              <amp-story-page  key="00"  ad="" id="i-amphtml-ad-page-00" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
-
                   <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" class="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" layout="fill" amp-story="" i-amphtml-layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
-
                   <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
                   <div class="i-amphtml-story-spinner" aria-hidden="true" aria-label="Loading video"><div class="i-amphtml-story-spinner-container"><div class="i-amphtml-story-spinner-layer"><div class="i-amphtml-story-spinner-circle-clipper left"></div><div class="i-amphtml-story-spinner-circle-clipper right"></div></div></div></div>
                 </amp-story-grid-layer>
-
-
               </amp-story-page>
 
             ) : null}
 
             {i === 5 && slide.ads ? (
-              <amp-story-page ad="" id="i-amphtml-ad-page-01" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" i-amphtml-visited="" active="">
+              <amp-story-page key="01" ad="" id="i-amphtml-ad-page-01" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
-
                   <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" class="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" layout="fill" amp-story="" i-amphtml-layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
-
                   <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
                   <div class="i-amphtml-story-spinner" aria-hidden="true" aria-label="Loading video"><div class="i-amphtml-story-spinner-container"><div class="i-amphtml-story-spinner-layer"><div class="i-amphtml-story-spinner-circle-clipper left"></div><div class="i-amphtml-story-spinner-circle-clipper right"></div></div></div></div>
                 </amp-story-grid-layer>
-
-
               </amp-story-page>
             ) : null}
-
-
-
-          </>
+          </React.Fragment>
         ))}
 
-
-
-
-
-
-
         {story.link && story.lastheading && story.lastimage && (
-          <amp-story-page id={`page${story.slides.length + 1}`} key={story.length + 1}>
+          <amp-story-page id={`page${story.slides.length + 1}`} key="000">
             <amp-story-grid-layer template="vertical">
               <amp-img src={`${story.lastimage}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
             </amp-story-grid-layer>
@@ -268,11 +237,7 @@ const Stories = ({ story, errorCode }) => {
 
 
 <amp-story-auto-analytics gtag-id="G-D18GTPG2SJ" class="i-amphtml-layout-container" i-amphtml-layout="container"></amp-story-auto-analytics>
-
-
-
-
-        <amp-story-auto-ads>
+        {/* <amp-story-auto-ads>
           <script type="application/json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
@@ -283,34 +248,14 @@ const Stories = ({ story, errorCode }) => {
                 }
               })
             }} />
-        </amp-story-auto-ads>
+        </amp-story-auto-ads> */}
 
       </amp-story>
-
-
-
     </>
   );
-
 };
 
 
-
-/*
-export async function getServerSideProps({ query, res }) {
-  try {
-    const data = await singleStory(query.slug);
-    if (data.error) {
-      res.statusCode = 404;
-      return { props: { errorCode: 404 } };
-    }
-    return { props: { story: data } };
-  } catch (error) {
-    console.error(error);
-    return { props: { errorCode: 500 } };
-  }
-}
-*/
 
 export async function getStaticPaths() {
   const slugs = await allslugs();
@@ -321,8 +266,6 @@ const paths = filteredSlugs.map((slugObject) => ({ params: { slug: slugObject.sl
 
 return { paths, fallback: "blocking" };
 }
-
-
 
 
 export async function getStaticProps({ params, res }) {
