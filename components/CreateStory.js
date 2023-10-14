@@ -66,7 +66,7 @@ const CreateStory = () => {
         const value = e.target.value;
         formData.set(name, value);
         setValues({ ...values, [name]: value, formData, error: '' });
-
+       
     };
 
 
@@ -75,7 +75,7 @@ const CreateStory = () => {
         updatedSlides[index] = { ...updatedSlides[index], [property]: e.target.value };
         setValues({ ...values, slides: updatedSlides });
         formData.set('slides', JSON.stringify(updatedSlides));
-
+        
     };
 
 
