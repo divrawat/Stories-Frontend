@@ -8,6 +8,7 @@ import React from "react";
 
 const Stories = ({ story, errorCode }) => {
 
+
   if (errorCode) {
     return (
       <>
@@ -155,14 +156,22 @@ const Stories = ({ story, errorCode }) => {
   const date0 = new Date(story.date);
   const formattedDate = format(date0, 'dd MMM, yyyy');
 
+
+
+
+
+
+
   return (
+
+
 
     <>
       {head()}
       <Script src="https://cdn.ampproject.org/v0.js" async />
       <Script custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js" async />
       <Script custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js" async />
-      <Script custom-element="amp-story-auto-analytics" src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js" async/>
+      <Script custom-element="amp-story-auto-analytics" src="https://cdn.ampproject.org/v0/amp-story-auto-analytics-0.1.js" async />
 
       <amp-story standalone="" title={`${story.title}`} publisher={`${APP_NAME}`} publisher-logo-src="http://www.liquorprices.in/wp-content/uploads/2023/09/logologo.png" poster-portrait-src={`${story.coverphoto}`} >
 
@@ -179,7 +188,7 @@ const Stories = ({ story, errorCode }) => {
         </amp-story-page>
 
         {story.slides.map((slide, i) => (
-         <React.Fragment key={i}>
+          <React.Fragment key={i}>
             <amp-story-page id={`page${i}`} key={i} auto-advance-after="5s">
               <amp-story-grid-layer template="vertical">
                 <amp-img src={`${slide.image}`} layout="responsive" animate-in="fade-in" width="720" height="1280" />
@@ -194,8 +203,12 @@ const Stories = ({ story, errorCode }) => {
             </amp-story-page>
 
 
-            {i === 2 && slide.ads ? (
-              <amp-story-page  key="00"  ad="" id="i-amphtml-ad-page-00" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
+
+            {i === 2 && story.ads ? (
+            
+
+
+              <amp-story-page key="00" ad="" id="i-amphtml-ad-page-00" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page2" i-amphtml-advance-to="page3" i-amphtml-visited="" active="">
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
                   <amp-ad type="adsense" data-ad-client="ca-pub-1721485376950080" data-ad-slot="6021303939" class="i-amphtml-story-ad i-amphtml-element i-amphtml-layout-fill i-amphtml-layout-size-defined i-amphtml-built i-amphtml-layout" layout="fill" amp-story="" i-amphtml-layout="fill" data-amp-slot-index="1" data-a4a-upgrade-type="amp-ad-network-adsense-impl" ></amp-ad>
                   <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container"><div class="i-amphtml-glass-pane"></div></amp-story-grid-layer>
@@ -203,10 +216,11 @@ const Stories = ({ story, errorCode }) => {
                 </amp-story-grid-layer>
               </amp-story-page>
 
+              
             ) : null}
 
 
-            {i === 5 && slide.ads ? (
+            {i === 5 && story.ads ? (
               <amp-story-page key="01" ad="" id="i-amphtml-ad-page-01" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" i-amphtml-visited="" active="">
 
                 <amp-story-grid-layer template="fill" class="i-amphtml-element i-amphtml-layout-container i-amphtml-story-layer i-amphtml-built i-amphtml-layout" i-amphtml-layout="container">
@@ -217,6 +231,7 @@ const Stories = ({ story, errorCode }) => {
               </amp-story-page>
             ) : null}
           </React.Fragment>
+
         ))}
 
 
@@ -240,7 +255,7 @@ const Stories = ({ story, errorCode }) => {
 
 
 
-<amp-story-auto-analytics gtag-id="G-D18GTPG2SJ" class="i-amphtml-layout-container" i-amphtml-layout="container"></amp-story-auto-analytics>
+        <amp-story-auto-analytics gtag-id="G-D18GTPG2SJ" class="i-amphtml-layout-container" i-amphtml-layout="container"></amp-story-auto-analytics>
         {/* <amp-story-auto-ads>
           <script type="application/json"
             dangerouslySetInnerHTML={{
@@ -264,25 +279,25 @@ const Stories = ({ story, errorCode }) => {
 export async function getStaticPaths() {
   const slugs = await allslugs();
 
-const excludedSlugs = ['/admin/edit-blogs'];
-const filteredSlugs = slugs.filter((slugObject) => !excludedSlugs.includes(slugObject.slug));
-const paths = filteredSlugs.map((slugObject) => ({ params: { slug: slugObject.slug } }));
+  const excludedSlugs = ['/admin/edit-blogs'];
+  const filteredSlugs = slugs.filter((slugObject) => !excludedSlugs.includes(slugObject.slug));
+  const paths = filteredSlugs.map((slugObject) => ({ params: { slug: slugObject.slug } }));
 
-return { paths, fallback: "blocking" };
+  return { paths, fallback: "blocking" };
 }
 
 
 export async function getStaticProps({ params, res }) {
   try {
-      const data = await singleStory(params.slug);
-      if (!data) {
-          res.statusCode = 404;
-          return { props: { errorCode: 404 } };
-      }
-      return { props: { story: data } };
+    const data = await singleStory(params.slug);
+    if (!data) {
+      res.statusCode = 404;
+      return { props: { errorCode: 404 } };
+    }
+    return { props: { story: data } };
   } catch (error) {
-      console.error(error);
-      return { props: { errorCode: 500 } };
+    console.error(error);
+    return { props: { errorCode: 500 } };
   }
 }
 

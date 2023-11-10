@@ -1,4 +1,3 @@
-import { withRouter } from 'next/router';
 import Layout from '@/components/Layout';
 import { list } from '../../action/story';
 import styles from '../../styles/stories.module.css';
