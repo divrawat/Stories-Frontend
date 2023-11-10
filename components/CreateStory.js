@@ -100,20 +100,12 @@ const CreateStory = () => {
         <div className={styles.back}>
             <form onSubmit={publishwebstory} >
                 <div className={styles.gridcontainer}>
-
-
-
-
                     <div className={styles.griditem2}>
-
                         {showError()}
                         {showSuccess()}
-
                         <button type='submit' className={styles.publishbtn}>{publishstory}</button>
 
                       <div>  <input className={styles.coverphoto} placeholder='Cover Photo Link' value={coverphoto} onChange={handletitle("coverphoto")} /></div>
-
-
 
                         <div className={styles.textarea}>
                             <textarea placeholder='Description' value={description} onChange={handletitle("description")} />
@@ -129,17 +121,7 @@ const CreateStory = () => {
                         <input className={styles.slug} value={lastimage} placeholder='Image' onChange={handletitle("lastimage")} />
                         <input className={styles.slug} value={lastheading} placeholder='Heading' onChange={handletitle("lastheading")} />
 
-
                     </div>
-
-
-
-
-
-
-
-
-
 
 
 

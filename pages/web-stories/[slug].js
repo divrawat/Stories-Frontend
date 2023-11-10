@@ -205,6 +205,7 @@ const Stories = ({ story, errorCode }) => {
 
             ) : null}
 
+
             {i === 5 && slide.ads ? (
               <amp-story-page key="01" ad="" id="i-amphtml-ad-page-01" class="i-amphtml-element i-amphtml-layout-container i-amphtml-built i-amphtml-layout i-amphtml-story-page-loaded" i-amphtml-layout="container" role="region" xdomain-ad="" i-amphtml-return-to="page5" i-amphtml-advance-to="page6" i-amphtml-visited="" active="">
 
@@ -217,6 +218,9 @@ const Stories = ({ story, errorCode }) => {
             ) : null}
           </React.Fragment>
         ))}
+
+
+
 
         {story.link && story.lastheading && story.lastimage && (
           <amp-story-page id={`page${story.slides.length + 1}`} key="000">
